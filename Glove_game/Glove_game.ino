@@ -27,6 +27,7 @@ void loop() {
   float  xAcceleration = accel.x; // Read in raw x-axis acceleration data
   //  Serial.print("Acceleration on the x-axis is ");
   //send information
+  delay(10);
   Serial.print(analogRead(flexSensor));
   Serial.print(",");
   Serial.println(xAcceleration);
