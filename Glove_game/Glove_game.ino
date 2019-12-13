@@ -30,7 +30,7 @@ void loop() {
   delay(10);
   Serial.print(analogRead(flexSensor));
   Serial.print(",");
-  Serial.println(xAcceleration);
+  Serial.println(-xAcceleration);
 
 
 
