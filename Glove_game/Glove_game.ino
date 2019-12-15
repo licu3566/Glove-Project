@@ -3,8 +3,9 @@
 #include <Wire.h> // Must include Wire library for I2C
 #include <SparkFun_MMA8452Q.h>
 
-int flexSensor = 3;
 
+int flexSensor = 3;
+int reading = 0;
 
 MMA8452Q accel; // Default MMA8452Q object create. (Address = 0x1D)
 //MMA8452Q accel(0x1C); // Initialize the MMA8452Q with an I2C address of 0x1C (SA0=0)
@@ -15,6 +16,7 @@ MMA8452Q accel; // Default MMA8452Q object create. (Address = 0x1D)
 void setup() {
   accel.init(); // Default init: +/-2g and 800Hz ODR
   pinMode(flexSensor, INPUT);
+  
   Serial.begin(9600);
 
 
@@ -31,6 +33,7 @@ void loop() {
   Serial.print(analogRead(flexSensor));
   Serial.print(",");
   Serial.println(-xAcceleration);
+
 
 
 
